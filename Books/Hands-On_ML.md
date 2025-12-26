@@ -1,85 +1,125 @@
-<h2>📅Notes of Hands-On Machine Learning with Scikit-Learn, Keras, and -- Aurélien Géron </h2>
+<h2>📘Notes of Hands-On Machine Learning with Scikit-Learn, Keras, & TF </h2>
+Author: Aurélien Géron
 
-
-<h4><b>📌 Date: Wednesday, October 29, 2025</b></h4>
+<h4><b>📌 Date: Friday, December 26, 2025</b></h4>
 <h4>📘 Chapter 1: The Machine Learning Landscape</h4>
-<p><b>Key things I learned:</b></p>
-<p>
-   <b>Numerical Data</b>
+<h3>What is Machine Learning? 🤔🤔🤔</h3>
+<pre>
+   Machine Learning is the] field of study that gives computers the ability to learn without being explicitly programmed.
+   <i>~Arthur Samuel, 1959</i>
+</pre>
+<h3>First ML: 1990s: the spam filter 😮</h3>
+<pre>
+   Flag which email was a spam 
+</pre>
+
+
+<h3>
+   📩 Key Concepts (Spam Filter Example):
+</h3>
+
+<ul>
+   <li>Training Set: Given an example of spam emails (e.g. flagged by users) and example of regular (nonspam / "ham")</li>
+   <li>Training instance / sample: Each training example</li>
+
+   
+   <li>Task (T): To flag for new emails</li>
+   <li>Experience (E): Experience is the training data</li>
+   <li>Performance (P): Performance measure needs to be defined</li>
+      <li>Ex: Ratio of correctly classified emails (Accuracy)</li>
+</ul>
+
+<p>➡️ ML improves P on T using E.</p>
+
+<h3>Why Use Machine Learning?</h3>
+<p>Consider how you would write a spam filter using traditional programming techniques</p>
+<ol>
+   <li>Consider what spams looks like. Could be some words or phrases that typically appears the most in the subject (eg. "4U", "credit card", "free", and "amazing". We could also consider like other patterns in the
+sender’s name, the email’s body, and other parts of the email.</li>
+   <li>Write a detection algorithm for each of the patterns that you noticed, and your program would flag emails as spam if a number of these patterns were detected. </li>
+   <li>Test your program and repeat steps 1 and 2 until it was good enough to launch</li>
+</ol>
+<p>Since the problem is difficult, your program will likely become a long list of complex rules—pretty hard to maintain.😩</p>
+
+
+<h3>📝Examples of Applications</h3>
+<ol>
+   <li>Analyzing Images Of Products On A Production Line To Automatically Classify Them</li>
    <ul>
-      <li><b>Integers</b>: Whole number (can be positive or negative)</li>
-      <dd><b>Ex</b>: 145</dd>
-      <li><b>Floating-point</b>: Fractional numbers (can be positive or negative)</li>
-      <dd><b>Ex</b>: 1.234</dd>
+      <li>This is image classification, typically performed using convolutional neural networks
+      <a href="https://www.w3schools.com">CH 14</a></li>
    </ul>
-</p>
-<p>
-   <b>Text Data</b>
+   
+   <li>Detecting Tumors in Brain Scans </li>
    <ul>
-      <li><b>Backlash Character (\)</b>: To tell the browser that the next character is not the end of string, but part of the text </li>
-      <dd><b>Ex</b>: 'Gene O\ 'Gene'</dd> <br>
-      <table>
-         <tr>
-            <th>Escape Sequences</th>
-            <th>Character Represented</th>
-         </tr>
-         <tr>
-            <td>\b</td>
-            <td>Backspace</td>
-         </tr>
-         <tr>
-            <td>\f</td>
-            <td>Form feed</td>
-         </tr>
-         <tr>
-            <td>\n</td>
-            <td>New line</td>
-         </tr>
-         <tr>
-            <td>\r</td>
-            <td>Carriage return</td>
-         </tr>
-         <tr>
-            <td>\t</td>
-            <td>Tab</td>
-         </tr>
-         <tr>
-            <td>\'</td>
-            <td>Single quote</td>
-         </tr>
-         <tr>
-            <td>\"</td>
-            <td>Double quote</td>
-         </tr>
-         <tr>
-            <td>\\</td>
-            <td>Backslash</td>
-         </tr>
-         <tr>
-            <td>\xNN</td>
-            <td>NN is a hexadecimal number that identifies a character in the Latin-1 character set</td>
-         </tr>
-         <tr>
-            <td>\xA9</td>
-            <td>copyright symbol (©)</td>
-         </tr>
-      </table>
-      <li><b>Boolean</b>: has two possible values (true / false)</li>
+      <li>This is semantic segmentation, where each pixel in the image is classified (as we want to determine the exact location and shape of tumors), typically using CNNs as well.</li>
    </ul>
-</p>
-<p>
-   <b>Variables-Storing Data in Memory</b>
+   
+   <li>Automatically Classifying News Articles</li>
    <ul>
-      <li>Data can be stored either <b>permanently</b> / <b>temporary</b></li>
-      <li>Variable name in Javascript code are <b>sensitive</b></li>
-      <dd>Can't use <b>reserved words</b></dd>
-      <b>Invalid names include:</b>
-      <ul>
-      <li>with</li>
-      <li>99variable</li>
-      <li>my%variable</li>
-      <li>theGood&theBad</li>
-      </ul>
+      <li>This is natural language processing (NLP), and more specifically text classification, which can be tackled using recurrent neural networks (RNNs), CNNs, or Transformers <a href="https://www.w3schools.com">CH 16</a></li>
    </ul>
-</p>
-<p>🔗 Folder: <a href="03-Chapter1(IntroToJavascriptAndTheWeb)">Chapter1</a> </p>
+
+   <li>Automatically Flagging Offensive Comments On Discussion Forums</li>
+   <ul>
+      <li>This is also text classification, using the same NLP tools.<a href="https://www.w3schools.com">CH 16</a></li>
+   </ul>
+
+   <li>Summarizing Long Documents Automatically</li>
+   <ul>
+      <li>This is a branch of NLP called text summarization, again using the same tools. <a href="https://www.w3schools.com">CH 16</a></li>
+   </ul>
+
+   <li>Creating A Chatbot Or A Personal Assistant</li>
+   <ul>
+      <li>This involves many NLP components, including natural language understanding (NLU) and question-answering modules. </li>
+   </ul>
+   
+   <li>Forecasting Your Company’s Revenue Next Year, Based On Many Performance Metrics</li>
+   <ul>
+      <li>This is a regression task (i.e., predicting values) that may be tackled using any regression model, such as a Linear Regression or Polynomial Regression model (see Chapter 4), a regression SVM (see Chapter 5), a regression Random Forest (see Chapter 7), or an artificial neural network (see Chapter 10). If you want to take into account sequences of past performance metrics, you may want to use RNNs, CNNs, or Transformers (see Chapters 15 and 16).  
+      Making your app react to voice commands
+This is speech recognition, which requires processing audio samples:
+since they are long and complex sequences, they are typically
+processed using RNNs, CNNs, or Transformers (see Chapters 15 and
+16).</li>
+   </ul>
+
+   <li>Detecting Credit Card Fraud</li>
+   <ul>
+      <li>This is anomaly detection (see Chapter 9).</li>
+   </ul>
+
+   <li>Segmenting Clients Based On Their Purchases So That You Can Design A Different Marketing Strategy For Each Segment </li>
+   <ul>
+      <li>This is clustering (see Chapter 9).</li>
+   </ul>
+
+   <li>Representing A Complex, High-Dimensional Dataset In A Clear And Insightful Diagram </li>
+   <ul>
+      <li>This is data visualization, often involving dimensionality reduction techniques (see Chapter 8).</li>
+   </ul>
+
+   <li>Recommending A Product That A Client May Be Interested In, Based On Past Purchases</li>
+   <ul>
+      <li>This is a recommender system. One approach is to feed past purchases
+(and other information about the client) to an artificial neural network
+(see Chapter 10), and get it to output the most likely next purchase.
+This neural net would typically be trained on past sequences of
+purchases across all clients.
+</li>
+   </ul>
+
+   <li>Building An Intelligent Bot For A Game/li>
+   <ul>
+      <li>This is often tackled using Reinforcement Learning (RL; see
+Chapter 18), which is a branch of Machine Learning that trains agents
+(such as bots) to pick the actions that will maximize their rewards over
+time (e.g., a bot may get a reward every time the player loses some life
+points), within a given environment (such as the game). The famous
+AlphaGo program that beat the world champion at the game of Go was
+built using RL.
+</li>
+   </ul>
+   
+</ol>
