@@ -123,3 +123,77 @@ built using RL.
    </ul>
    
 </ol>
+
+<hr>
+<h4><b>📌 Date: Saturday, December 27, 2025</b></h4>
+<h3>📝Types of Machine Learning Systems</h3>
+<p>There are 4 major categories:</p>
+<ol>
+   <li>Supervised learning</li>
+   <p>Supervised learning is a type of machine learning where the model is trained using labeled data — each training example has an input and the correct output (label).</p>
+   <ol><h4>📧 Example 1: Spam classification</h4></ol>
+   <ul>
+   <table>
+      <tr>
+         <th>Email text</th>
+         <th>has_link</th>
+         <th>length</th>
+         <th>Label</th>
+      </tr>
+      <tr>
+         <td>Win money now!!!</td>
+         <td>1</td>
+         <td>120</td>
+         <td>spam</td>
+      </tr>
+      <tr>
+         <td>Meeting at 3pm tomorrow</td>
+         <td>0</td>
+         <td>45</td>
+         <td>ham</td>
+      </tr>
+      <tr>
+         <td>Cheap pills, buy now</td>
+         <td>1</td>
+         <td>90</td>
+         <td>spam</td>
+      </tr>
+   </table>
+      <p>X = (has_link, length, text features)</p>
+      <p>y = spam / ham</p>
+     <p>👉 Model learns: X → y</p>
+      </ul>
+
+   <ol><h4>🚗 Example 2: Regression (car price)/h4></ol>
+   <ul>
+   <table>
+      <tr>
+         <th>Mileage</th>
+         <th>Age (years)</th>
+         <th>Brand</th>
+         <th>Price ($)</th>
+      </tr>
+      <tr>
+         <td>50,000</td>
+         <td>3</td>
+         <td>Toyota</td>
+         <td>15000</td>
+      </tr>
+      <tr>
+         <td>80,000</td>
+         <td>5</td>
+         <td>Honda</td>
+         <td>12000</td>
+      </tr>
+      <tr>
+         <td>20,000</td>
+         <td>1</td>
+         <td>BMW</td>
+         <td>28000</td>
+      </tr>
+   </table>
+      <p>X = mileage, age, brand</p>
+      <p>y = price (number)</p>
+     <p>👉 Model learns: X → y</p>
+      </ul>
+</ol>
