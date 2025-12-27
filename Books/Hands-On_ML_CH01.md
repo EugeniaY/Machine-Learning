@@ -197,5 +197,40 @@ built using RL.
       <p>X = mileage, age, brand</p>
       <p>y = price (number)</p>
      <p>👉 Model learns: X → y</p>
+      <p>This is a Regression</p>
+      <p>Regression is a type of supervised learning task where the goal is to predict a numeric (continuous) value, not a category.</p>
+      </ul>
+     <ol><h4>🔁 Algorithms vs Tasks</h4></ol>
+     <ul>
+        <p>Even though we usually say:</p>
+        <ul>
+           <li>Regression → predicts numbers</li>
+           <li>Classification → predicts classes</li>
+        </ul>
+        <p>👉 Some algorithms are flexible and can be adapted to do either task.</p>
+     </ul>
+     <ol><h4>🎯 Example: Logistic Regression</h4></ol>
+     <ol>Despite the name “regression”, it is mostly used for classification.</ol>
+     <ol>What it actually outputs:
+     <ul><li>a number between 0 and 1, e.g. 0.2</li></ul>
+        We interpret it as:
+        <ul><li>P(class = 1 | X) = 0.2 → 20% chance of being spam</li></ul>
+        Then we apply a threshold:
+        <ul><li>if ≥ 0.5 → predict spam</li></ul>
+        <ul><li>else → not spam</li></ul>
+        So:
+        Logistic Regression does regression on probabilities, then we turn that into a class.
+        That’s why it’s used for classification.
+     </ol>
+      <ol><h4>🎯Most Important Supervised Learning Algorithms</h4></ol>
+      <ul>
+        <ul>
+           <li>k-Nearest Neighbors</li>
+           <li>Linear Regression</li>
+           <li>Logistic Regression</li>
+           <li>Support Vector Machines (SVMs)</li>
+           <li>Decision Trees and Random Forests</li>
+           <li>Neural networks</li>
+        </ul>
       </ul>
 </ol>
