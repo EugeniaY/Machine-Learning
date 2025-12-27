@@ -233,4 +233,7 @@ built using RL.
            <li>Neural networks</li>
         </ul>
       </ul>
+    <li>Unsupervised learning</li>
+    <p>Training data is unlabeled</p>
+    
 </ol>
