@@ -131,6 +131,7 @@ built using RL.
 <ol>
    <li>Supervised learning</li>
    <p>Supervised learning is a type of machine learning where the model is trained using labeled data — each training example has an input and the correct output (label).</p>
+   <ol><h4>Example of Classification</h4></ol>
    <ol><h4>📧 Example 1: Spam classification</h4></ol>
    <ul>
    <table>
@@ -164,7 +165,8 @@ built using RL.
      <p>👉 Model learns: X → y</p>
       </ul>
 
-   <ol><h4>🚗 Example 2: Regression (car price)/h4></ol>
+   <ol><h4>Example of Predicting a Target Numeric Value</h4></ol>
+   <ol><h4>🚗 Example 2: Regression (car price)</h4></ol>
    <ul>
    <table>
       <tr>
