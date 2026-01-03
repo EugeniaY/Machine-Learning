@@ -451,3 +451,34 @@ So next time, the agent avoids fire.
        - Behavior is stable and predictable
     <p>(Exactly like AlphaGo during real matches.)</p>
 
+### Batch Learning vs Online Learning
+#### Batch Learning (Offline Learning)
+What it means
+   - The model is trained using all available data at once
+   - It cannot learn new data by itself
+   - Training is done offline
+   - After training, the model is fixed
+     
+If new data appears:
+   - You must retrain the whole model from scratch
+   - Using old data + new data
+   - Then replace the old model
+
+Why it’s called offline learning
+Because:
+   - Training takes a lot of time
+   - Uses a lot of CPU, memory, disk
+   - So it’s done not while the system is running
+
+Problems with Batch Learning
+   - Training can take hours or days
+   - Expensive if data is large
+   - Not good for rapidly changing data (e.g. stock prices)
+   - Not suitable for devices with limited resources (phones, robots)
+
+Simple example
+📧 Spam filter (batch learning)
+   - Train model today using all emails
+   - Tomorrow a new spam type appears
+   - ❌ Model doesn’t know it
+   - ✅ Must retrain the whole model again
