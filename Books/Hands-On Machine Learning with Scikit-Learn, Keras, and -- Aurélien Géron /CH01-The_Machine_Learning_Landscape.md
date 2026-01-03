@@ -285,7 +285,7 @@ Anomaly detection finds unusual or abnormal data points.
 - Training data must be very clean
 - The model only recognizes what is "normal."
 - Example: A Chihuahua is not considered strange, because it is still recognized as a dog (assuming "dog" is the normal class).
-➡️ The Difference: It lies in the cleanliness of the training data and the specific goal of the detection.</p>
+<p>➡️ The Difference: It lies in the cleanliness of the training data and the specific goal of the detection.</p>
 
 #### 7️⃣ Association Rule Learning
 Association rule learning finds relationships between items in large datasets.
@@ -452,33 +452,67 @@ So next time, the agent avoids fire.
     <p>(Exactly like AlphaGo during real matches.)</p>
 
 ### Batch Learning vs Online Learning
-#### Batch Learning (Offline Learning)
-What it means
+#### 🅰️ Batch Learning (Offline Learning)
+**What it means**
    - The model is trained using all available data at once
    - It cannot learn new data by itself
    - Training is done offline
    - After training, the model is fixed
      
-If new data appears:
+**If new data appears:**
    - You must retrain the whole model from scratch
    - Using old data + new data
    - Then replace the old model
 
-Why it’s called offline learning
+**Why it’s called offline learning**
 Because:
    - Training takes a lot of time
    - Uses a lot of CPU, memory, disk
    - So it’s done not while the system is running
 
-Problems with Batch Learning
+**Problems with Batch Learning**
    - Training can take hours or days
    - Expensive if data is large
    - Not good for rapidly changing data (e.g. stock prices)
    - Not suitable for devices with limited resources (phones, robots)
 
-Simple example
+**Simple example**
 📧 Spam filter (batch learning)
    - Train model today using all emails
    - Tomorrow a new spam type appears
    - ❌ Model doesn’t know it
    - ✅ Must retrain the whole model again
+
+#### Online Learning (Incremental Learning)
+**What it means**
+   - The model learns step by step
+   - New data is added one by one or in small batches (mini-batches)
+   - The model keeps updating itself
+
+**This happens:**
+   - While the system is running
+   - As new data arrives
+
+<img width="700" height="506" alt="image" src="https://github.com/user-attachments/assets/3a655cd9-13bb-47fb-adf1-127284cf3cbf" />
+
+**What the Picture above means** 
+1. Train the model
+2. Launch it into production
+3. New data comes in
+4. The model:
+      - Runs
+      - Learns
+5. Updates itself continuously
+<p>The model never stops learning</p>
+
+**Advantages of Online Learning**
+   - Very fast updates
+   - Uses less memory
+   - Good for:
+        - Streaming data (stock prices, sensors)
+        - Limited hardware
+        - Real-time systems
+
+   - After learning:
+        - Old data can be discarded
+        - Saves storage space
