@@ -199,7 +199,7 @@ The model finds patterns in **unlabeled data**.
 - Apriori
 - Eclat
 
-#### 🅰️ Clustering
+#### 1️⃣ Clustering
 **Clustering means grouping data points that are similar to each other, without labels.**
 - You have unlabeled data (for example, blog visitor data).
 - The algorithm searches for patterns on its own and groups similar data together.
@@ -218,7 +218,7 @@ The algorithm discovers these patterns itself; you do not define them.
 - Then splits them into smaller groups
 - Useful for market segmentation or targeted content
 
-#### 🅱️ Visualization
+#### 2️⃣ Visualization
 **Visualization algorithms help us see complex data.**
 - Input: high-dimensional, unlabeled data
 - Output: a 2D or 3D plot
@@ -258,7 +258,7 @@ Example:
 - Car Age + Mileage → combined into 1 feature.
 - New Feature = Car wear and tear.
 This is called feature extraction.
-➡️ Result: The data becomes simpler, and the model becomes more efficient.
+Result: The data becomes simpler, and the model becomes more efficient.
 
 #### 5️⃣ Anomaly Detection
 Anomaly detection finds unusual or abnormal data points.
@@ -285,7 +285,7 @@ Anomaly detection finds unusual or abnormal data points.
 - Training data must be very clean
 - The model only recognizes what is "normal."
 - Example: A Chihuahua is not considered strange, because it is still recognized as a dog (assuming "dog" is the normal class).
-➡️ The Difference: It lies in the cleanliness of the training data and the specific goal of the detection.
+➡️ The Difference: It lies in the cleanliness of the training data and the specific goal of the detection.</p>
 
 #### 7️⃣ Association Rule Learning
 Association rule learning finds relationships between items in large datasets.
@@ -297,5 +297,157 @@ Association rule learning finds relationships between items in large datasets.
 **Example:**
 - Buy BBQ Sauce + Chips → Often results in buying Steak.
 - Business Solution: Place these items near each other in the store.
+<p>➡️ Application: Widely used in retail and product recommendation systems.</p>
 
-➡️ Application: Widely used in retail and product recommendation systems.
+### 3️⃣ Semi-Supervised Learning
+What it is
+Semi-supervised learning uses:
+- A small amount of labeled data
+- A large amount of unlabeled data
+<p>This is common because labeling data is expensive and slow.</p>
+
+<img width="700" height="496" alt="image" src="https://github.com/user-attachments/assets/7a83bdc0-012b-43ec-9922-8704e975308f" />
+
+What the picture means
+- Triangles & squares → labeled data (we know their class)
+- Gray dots (circles) → unlabeled data
+- Cross (X) → a new data point we want to classify
+
+Even if the cross is closer to labeled squares, the unlabeled data structure shows it belongs to the triangle cluster.
+Unlabeled data helps guide the decision.
+
+**Example: (Google Photos)**
+1. You upload many photos
+   You upload hundreds of family photos.
+   - No names
+   - No labels
+   - Just raw photos
+     
+2. The system groups faces (UNSUPERVISED)
+   The system looks at faces and says:
+   - “These faces look the same” → Group A
+   - “These faces look the same” → Group B
+
+   Example:
+      - Person A appears in photos 1, 5, 11
+      - Person B appears in photos 2, 5, 7
+
+   At this point:
+      - The system does NOT know names
+      - It only knows which faces are similar
+   
+   This is unsupervised learning (clustering).   
+
+3. You give ONE label per person
+   Now the system asks you:
+   > — “Who is this person?”
+
+   You answer:
+      - “This is Mom”
+      - “This is Dad”
+   
+   You label just one face per group.
+
+4. The system labels EVERYTHING (SUPERVISED part)
+   Because it already grouped faces:
+      - All faces in Group A → labeled Mom
+      - All faces in Group B → labeled Dad
+
+   Now:
+      - Every photo is labeled
+      - You can search: “Mom”
+      - Google Photos shows all photos of Mom
+  
+### 4️⃣ Reinforcement Learning
+Definition
+Reinforcement Learning (RL) is very different from supervised learning.
+
+There are:
+- Agent → the learner
+- Environment → the world
+- Actions → what the agent can do
+- Rewards / penalties → feedback
+
+The goal:
+  Learn the best strategy (policy) to maximize total reward.
+
+Example Explanation:
+<img width="700" height="823" alt="image" src="https://github.com/user-attachments/assets/cbc10e3a-8765-454a-9321-76b11bbde0fc" />
+
+<p>🔥 Touch fire → negative reward</p>
+<p>💧 Move to water → positive outcome</p>
+
+So next time, the agent avoids fire.
+
+**Example: (A Robot Learns to Walk)**
+1. Define the Environment
+   The environment is the maze itself:
+      - Maze layout (walls, paths)
+      - Start position
+      - Exit position
+      - Rules of movement
+   The environment controls what is allowed and what happens next.
+
+2. Define the Agent
+   The agent is the game character.
+      - It does not know the maze
+      - It must learn by trying
+  
+3. Define the State (Observation)
+  The state is what the agent can “see”, for example:
+      - Its current position: (x, y)
+      - Nearby walls (up, down, left, right)
+      - Whether it is at the goal
+   <p>This is the information the agent uses to decide.</p>
+
+4. Define the Actions
+   The actions are simple:
+      - Move up
+      - Move down
+      - Move left
+      - Move right
+   <p>Each step, the agent chooses one action.</p>p>
+
+5. Define the Reward (Goal)
+   Rewards tell the agent what is good or bad:
+      - +100 → reaches the exit
+      - −1 → each step (to encourage faster solutions)
+      - −10 → hits a wall
+      - −100 → falls into a trap (if any)
+   <p>Reward = feedback.</p>
+
+6. Start an Episode (One Training Run)
+   One episode = one full game:
+      - Start at beginning
+      - End when:
+           - the agent reaches the exit, or
+           - time limit is reached
+
+7. Loop: Observe → Act → Get Reward
+   Repeated many times per episode:
+      a) Agent observes state (current position)
+      b) Agent chooses an action (move)
+      c) Environment executes the action
+      d) Agent receives reward
+      e) New state is observed
+    <p>This happens many times in one episode.</p>
+    
+8. Update the Policy (Learning Step)
+   After many steps or episodes:
+      - The agent updates its policy
+      - Actions that lead closer to the exit get higher probability
+      - Actions that hit walls or traps are avoided
+   <p>This is where learning actually happens.</p>
+
+9. Repeat Many Times
+   - First episodes: random movement, lots of mistakes
+   - Later episodes: smarter paths
+   - Eventually: the shortest path to the exit
+    
+10. Deployment (Learning OFF)
+    When the game is released:
+       - Learning is turned off
+       - The agent only follows the learned policy
+       - Behavior is stable and predictable
+    <p>(Exactly like AlphaGo during real matches.)</p>
+
