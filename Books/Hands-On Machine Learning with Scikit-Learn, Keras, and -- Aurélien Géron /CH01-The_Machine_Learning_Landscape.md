@@ -4,7 +4,7 @@
 **Author:** Aurélien Géron
 
 ## 📌 December 26, 2025
-### Chapter 1: The Machine Learning Landscape
+## Chapter 1: The Machine Learning Landscape
 
 ### What Is Machine Learning?
 
@@ -61,11 +61,11 @@ Traditional spam filters rely on hand-written rules:
 ## 📌 December 27, 2025  
 ### Types of Machine Learning Systems
 
-### 1️⃣ Supervised Learning
+## 1️⃣ Supervised Learning
 **Definition:**  
 The model is trained using **labeled data**.
 
-#### 📧 Classification Example — Spam Detection
+### 📧 Classification Example — Spam Detection
 <table>
       <tr>
         <th>Email text</th>
@@ -96,7 +96,7 @@ The model is trained using **labeled data**.
 - **X:** features (has_link, length, text)  
 - **y:** label (spam / ham)
 
-#### 🚗 Regression Example — Car Price Prediction
+### 🚗 Regression Example — Car Price Prediction
 <table>
       <tr>
         <th>Mileage</th>
@@ -127,7 +127,7 @@ The model is trained using **labeled data**.
 - **X:** mileage, age, brand  
 - **y:** price (numeric)
 
-#### 🎯 Logistic Regression
+### 🎯 Logistic Regression
 
 - Outputs probability (0–1)  
 - Example: `P(spam | X) = 0.2`  
@@ -135,7 +135,7 @@ The model is trained using **labeled data**.
   - ≥ 0.5 → spam  
   - < 0.5 → not spam  
 
-#### ⭐ Common Supervised Learning Algorithms
+### ⭐ Common Supervised Learning Algorithms
 
 - k-Nearest Neighbors  
 - Linear Regression  
@@ -145,12 +145,12 @@ The model is trained using **labeled data**.
 - Neural Networks  
 
 
-### 2️⃣ Unsupervised Learning
+## 2️⃣ Unsupervised Learning
 
 **Definition:**  
 The model finds patterns in **unlabeled data**.
 
-#### 📧 Example — Emails Without Labels
+### 📧 Example — Emails Without Labels
  <table>
    <tr>
      <th>Email text</th>
@@ -178,7 +178,7 @@ The model finds patterns in **unlabeled data**.
 - Group A → promotional  
 - Group B → normal
 
-#### ⭐ Common Unsupervised Learning Algorithms
+### ⭐ Common Unsupervised Learning Algorithms
 **Clustering**
 - K-Means
 - DBSCAN
@@ -199,7 +199,7 @@ The model finds patterns in **unlabeled data**.
 - Apriori
 - Eclat
 
-#### 1️⃣ Clustering
+### 1️⃣ Clustering
 **Clustering means grouping data points that are similar to each other, without labels.**
 - You have unlabeled data (for example, blog visitor data).
 - The algorithm searches for patterns on its own and groups similar data together.
@@ -218,10 +218,10 @@ The algorithm discovers these patterns itself; you do not define them.
 - Then splits them into smaller groups
 - Useful for market segmentation or targeted content
 
-#### 2️⃣ Visualization
+### 2️⃣ Visualization
 **Visualization algorithms help us see complex data.**
-- Input: high-dimensional, unlabeled data
-- Output: a 2D or 3D plot
+- **Input**: high-dimensional, unlabeled data
+- **Output**: a 2D or 3D plot
 
 **Goal:**
 - Keep similar data points close together
@@ -229,7 +229,7 @@ The algorithm discovers these patterns itself; you do not define them.
 
 This helps humans understand the structure of the data and spot unexpected patterns.
 
-#### 3️⃣ t-SNE (Example of Visualization)
+### 3️⃣ t-SNE (Example of Visualization)
 **t-SNE is a visualization technique.**
 - It converts high-dimensional data into 2D space
 - Similar items appear close together
@@ -246,7 +246,7 @@ This helps humans understand the structure of the data and spot unexpected patte
 - No labels during training
 - The model still captures semantic similarities: It understands which items are "meaningfully" similar to each other.
 
-#### 4️⃣ Dimensionality Reduction
+### 4️⃣ Dimensionality Reduction
 Goal:
 - To reduce the number of features.
 - Without losing too much information.
@@ -260,7 +260,7 @@ Example:
 This is called feature extraction.
 Result: The data becomes simpler, and the model becomes more efficient.
 
-#### 5️⃣ Anomaly Detection
+### 5️⃣ Anomaly Detection
 Anomaly detection finds unusual or abnormal data points.
 
 **Examples:**
@@ -272,7 +272,7 @@ Anomaly detection finds unusual or abnormal data points.
 - The model is trained using normal data.
 - If new data looks very different → labeled as an anomaly
 
-#### 6️⃣ Anomaly Detection vs Novelty Detection
+### 6️⃣ Anomaly Detection vs Novelty Detection
 
 <img width="700" height="460" alt="image" src="https://github.com/user-attachments/assets/4574f188-272e-470d-bff7-1c3e8675b2b6" />
 
@@ -287,7 +287,7 @@ Anomaly detection finds unusual or abnormal data points.
 - Example: A Chihuahua is not considered strange, because it is still recognized as a dog (assuming "dog" is the normal class).
 <p>➡️ The Difference: It lies in the cleanliness of the training data and the specific goal of the detection.</p>
 
-#### 7️⃣ Association Rule Learning
+### 7️⃣ Association Rule Learning
 Association rule learning finds relationships between items in large datasets.
 
 **Goal:**
@@ -300,18 +300,18 @@ Association rule learning finds relationships between items in large datasets.
 <p>➡️ Application: Widely used in retail and product recommendation systems.</p>
 
 ### 3️⃣ Semi-Supervised Learning
-What it is
+**What it is**
 Semi-supervised learning uses:
-- A small amount of labeled data
-- A large amount of unlabeled data
+   - A small amount of labeled data
+   - A large amount of unlabeled data
 <p>This is common because labeling data is expensive and slow.</p>
 
 <img width="700" height="496" alt="image" src="https://github.com/user-attachments/assets/7a83bdc0-012b-43ec-9922-8704e975308f" />
 
-What the picture means
-- Triangles & squares → labeled data (we know their class)
-- Gray dots (circles) → unlabeled data
-- Cross (X) → a new data point we want to classify
+**What the picture means**
+   - Triangles & squares → labeled data (we know their class)
+   - Gray dots (circles) → unlabeled data
+   - Cross (X) → a new data point we want to classify
 
 Even if the cross is closer to labeled squares, the unlabeled data structure shows it belongs to the triangle cluster.
 Unlabeled data helps guide the decision.
@@ -451,8 +451,8 @@ So next time, the agent avoids fire.
        - Behavior is stable and predictable
     <p>(Exactly like AlphaGo during real matches.)</p>
 
-### Batch Learning vs Online Learning
-#### 🅰️ Batch Learning (Offline Learning)
+## Batch Learning vs Online Learning
+### 🅰️ Batch Learning (Offline Learning)
 **What it means**
    - The model is trained using all available data at once
    - It cannot learn new data by itself
@@ -483,7 +483,7 @@ Because:
    - ❌ Model doesn’t know it
    - ✅ Must retrain the whole model again
 
-#### Online Learning (Incremental Learning)
+### 🅱️ Online Learning (Incremental Learning)
 **What it means**
    - The model learns step by step
    - New data is added one by one or in small batches (mini-batches)
