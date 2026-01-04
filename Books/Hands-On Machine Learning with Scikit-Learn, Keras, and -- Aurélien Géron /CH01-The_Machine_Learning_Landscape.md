@@ -516,3 +516,28 @@ Because:
    - After learning:
         - Old data can be discarded
         - Saves storage space
+    
+Out-of-core Learning (Important ⚠️)
+📌 What it is
+   - Used when data is too large to fit in memory
+   - Data is:
+        - Split into small pieces
+        - Loaded one part at a time
+        - Trained incrementally
+
+⚠️ Important note:
+   - It’s usually done offline
+   - So “online learning” here really means incremental learning, not necessarily live
+
+📌 What Figure 1-14 shows
+
+<img width="700" height="527" alt="image" src="https://github.com/user-attachments/assets/d971aaaa-b7dc-4361-bc01-3f218da344e2" />
+
+1. Huge dataset
+2. Data is chopped into small pieces
+3. Train incrementally
+4. Evaluate results
+5. Analyze errors
+6. Improve the model
+7. Launch when good enough
+
